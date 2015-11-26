@@ -5,4 +5,5 @@ with Windows, OS X, and Linux. I'm not sure how; I don't remember having
 a Windows computer available to me at the time. It's ironic I never used
 VCS for this. I guess I didn't want to deal with that on top of
 everything else. For actual usage instructions, read the (very thorough)
-README at `aenquiz/README`. Seriously, it even has a version history.
+README at `aenquiz-master/README`. Seriously, it even has a version
+history.
