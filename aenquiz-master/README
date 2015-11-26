@@ -1,0 +1,222 @@
+aenquiz v2.1.1. For memorizing words from the Aeneid.
+Copyright (C) 2014  Michael Szegedy
+
+This file is part of aenquiz.
+
+aenquiz is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+aenquiz is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with aenquiz.  If not, see <http://www.gnu.org/licenses/>.
+
+CONTACT INFO
+------------
+My school email is `michaelszegedy (AT) students (DOT) berkeley (DOT) net'. I'm
+afraid to give you my regular email, on the off chance that someone might abuse
+it.
+
+HOW TO USE
+----------
+First, load words to get quizzed on; for details on how to do this, type
+`help load' at the prompt. Then, type `quiz'. Then it will ask you questions
+about which word means what. If you answer with any part of the definition (no
+matter how small, except if you don't say anything at all) it will accept it as
+a right answer. If you do this four times, it swaps it out for a new word, until
+there are no more words left. If you get a word wrong, that counts as getting it
+right negative one times. Even though it's lax about verifying whether you
+actually got it right, don't cheat! If you're stuck, just hit enter and it'll
+show you the definition again. When you are getting shown a definition, press
+enter to continue. Separate your answers with commas to match alternate
+definitions, like this:
+
+What is the definition of "pelagi"?
+sea, plain
+
+Sometimes the definition is missing a crucial part, like the actual definition,
+or an alternative meaning that is very obvious (tot I am looking at you). It's
+okay to cheat in this case. Just look the word up somewhere else afterwards.
+It keeps track of how many times you've gotten a particular word right. The
+more times you get a word right, the less frequently it'll ask you. If you're
+missing TOO many words, because you've used the program so much, just delete
+known.csv in resources/. Or you can also edit it and change the values for the
+words; each number is a count of how many times you've gotten that word right.
+If the word has principal parts, it might also ask you what the principal parts
+are. In this case, you need to both get the definition right, and the principal
+parts right five times. Type out the principal parts the prompt gave with the
+definition, exactly the same way it was given (except that spaces don't matter).
+For nouns, the gender is part of the principal parts, and is usually a single
+character at the end of the parts. Example:
+
+What are the principal parts of "vocis"?
+vox, vocis, f
+
+If you get even a single character wrong in the principal parts, it counts as
+getting the whole thing wrong. If there are multiple sets of principal parts,
+you only have to provide one of them. If the principal parts don't make sense,
+please tell me; see the section of this README labeled `CONTACT INFO'.
+
+HOW TO RUN
+----------
+Windows:
+Extract all the items from aenquiz.zip. Then, install StrawberryPerl. Just
+google it and run the .msi file they have on their website. Then, double-click
+aenquiz.pl. When the computer asks what to do with it, just click "Run".
+NOTE: Don't install ActivePerl. Install StrawberryPerl. ActivePerl is literally
+made by capitalist pigs. Also, to change things like the terminal size and font,
+right-click the top bar and select "Properties".
+
+Mac OS X:
+Copy the folder aenquiz/ to Documents. Then, open the Terminal in
+/Applications/Utilities. Type `cd ~/Documents/aenquiz' into it and press Return.
+Then, type "perl aenquiz.pl" into it to run the file.
+NOTE: It is strongly recommended that you change your Terminal font and color
+for this. You may simply go to Shell->New Window->Homebrew (or Pro is a good one
+for this too) to select a better-looking terminal, or if you want more control
+over the font then you can go to Terminal->Preferences->Settings and change the
+font in the right pane.
+
+Chrome OS:
+Um. Sorry, but this is kind of impossible, because you can't really download
+files onto your computer, can you? Regardless, you can access your terminal by
+pushing Ctrl+Alt+=>, where the => is that right arrow key above 2 and 3. Just
+type "chrome" and hit Enter. To go back to your normal screen, push Ctrl+Alt+<=,
+where the <= is the left arrow key above 1 and 3. Maybe you can figure out a
+clever way to run it? If so, totally tell me. I don't have time to make it into
+a Chrome app, sorry.
+
+Linux/GNU/etc:
+Do I really need to tell you? Fine... navigate to the folder containing
+aenquiz.pl and resources/ in your file manager. Right click the background, and
+click "Open Terminal here". Type "./aenquiz.pl" or "perl aenquiz.pl" into the
+terminal to run it. Or possibly just double-clicking it will work too, depending
+on your system.
+
+VERSION HISTORY
+---------------
+2.1.1:
+- Updated mcmillan.csv.
+- Changed displayed version number to "2.1.1".
+2.1:
+- Tested on Windows and fixed compatibility issues.
+- Removed no-color version, since color now definitely works on Windows.
+- Modified two words in mcmillan.csv so that the program will recognize them.
+- Changed Windows instructions in the README to reflect information learned from
+  testing.
+- Changed displayed version number to "2.1".
+2.0.1:
+- Got rid of delete-dictionary-permanently-and-irretrievably.pl from the main
+  directory.
+- Fixed a few bugs associated with upgrading to 2.0.
+- Amended README to inform about principal parts.
+- Changed displayed version number to "2.0.1".
+2.0:
+- User interaction with the program was getting too complicated, so I turned it
+  into a proper prompt. I added the appropriate command structure.
+- You can now quiz yourself on only words from Ms. McMillan's spreadsheet, or
+  from a user-defined list.
+- The program now quizzes you on principal parts and gender.
+- You can now make a printout of the program that assures Ms. McMillan that you
+  have used the program.
+- Got rid of the macronless Windows functionality. I'll put it back in if there
+  arises a need for it.
+- Fixed some bugs.
+- Added info to the README relevant to these new features.
+- Changed displayed version number to "2.0".
+1.9.2:
+- Made program recognize proper nouns. This was already supposed to be a
+  feature.
+- Changed the displayed version number to "1.9.2".
+1.9.1:
+- Fixed a bug where the program would sometimes not read a definition from the
+  dictionary. (Take note: this time it wasn't a problem with the dictionary!)
+- Changed the displayed version number to "1.9.1".
+1.9:
+- Fixed the dictionary once and for all. Seriously, this IS even its final form.
+- Changed the displayed version number to "1.9".
+1.8:
+- Finally added proper licensing.
+- Corrected processing of words with clitics. Added words with clitics to
+  dictionary.
+- Fixed a bug where an unnecessary part of the Wiktionary text got left in.
+- Changed the displayed version number to "1.8".
+1.7.3:
+- Corrected wording for the "what lines you want to be quizzed on" dialogue.
+- Futureproofed the README.
+- Changed the displayed version number to "1.7.3".
+1.7.2:
+- Sorted dictionary PROPERLY.
+- Changed the displayed version number to "1.7.2".
+1.7.1:
+- Added semicolon to colorless version to separate the part of speech from the
+  definition.
+- Changed the displayed version number to "1.7.1".
+1.7:
+- Context is now colored and in parentheses, instead of ugly braces.
+- Changed the displayed version number to "1.7".
+1.6.4:
+- Changed formatting slightly for definitions to look better.
+- Added some periods to the version history section of the README.
+- Changed the displayed version number to "1.6.4".
+1.6.3:
+- Put macrons back for Mac OS X, after more extensive testing.
+- Added note for Mac OS X in README.
+- Added section for Chrome OS in README.
+- Changed the displayed version number to "1.6.3".
+1.6.2:
+- Fixed a bug that made definitions sometimes come out garbled.
+- Amended README upon realization that only "perl aenquiz.pl" works on Mac OS X.
+- Changed the displayed version number to "1.6.2".
+1.6.1:
+- Fixed a bug in the colorless version that made it not launch.
+- Removed macrons for Mac OS X and Windows versions, for compatibility.
+- Changed the displayed version number to "1.6.1".
+1.6:
+- Part of speech is now shown for primary definitions.
+- Added color!
+- Added colorless compatibility version.
+- Expanded dictionary with missing words.
+- Changed the displayed version number to "1.6".
+1.5.1:
+- Removed duplicates from dictionary. Put dictionary in alphabetical order.
+  Removed one letter words from dictionary.
+- Changed the displayed version number to "1.5.1".
+1.5:
+- Expanded dictionary to nearly twice its size using new terms that should have
+  been there before. The program is now nearly guaranteed to recognize even most
+  proper nouns.
+- Changed the displayed version number to "1.5".
+1.4:
+- Replaced pipe system for alternative matches with better system, using commas.
+- Changed the displayed version number to "1.4".
+1.3:
+- Documented usage of pipes to separate alternate matches. (It's not a side
+  effect of using regex to match the answer; it's a feature.)
+- Changed the displayed version number to "1.3".
+1.2:
+- Fixed a bug where if you already knew too many words the program would crash
+  when it tried to load new words.
+- Changed the displayed title to "aenquiz" like it should be.
+- Added more advice to README.
+- Changed the displayed version number to "1.2".
+1.1:
+- Fixed a bug where the line range would have to begin with 1.
+- Changed the displayed version number to "1.1".
+1.0:
+- Added dictionary to program resources.
+- Eliminated words from dictionary that weren't in the Aeneid anywhere, making
+  lookup about a hundred times faster.
+- Moved all resources to an explicit "resources" directory.
+- The program now remembers which words you've already memorized, and how many
+  times you have done so, and gives them to you with accordingly low
+  probability.
+- Eliminated dependence on system commands (thankfully the clearing commands
+  were already platform-independent).
+- Made a README.
+- Changed the displayed version number to "1.0".
