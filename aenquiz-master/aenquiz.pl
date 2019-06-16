@@ -1,7 +1,7 @@
 #!/bin/perl
 
 # aenquiz v2.1.1. For memorizing words from the Aeneid.
-# Copyright (C) 2014  Michael Szegedy
+# Copyright (C) 2014  Maria Szegedy
 #
 # This file is part of aenquiz.
 #
@@ -353,13 +353,13 @@ sub showword {
       print color $colors{$definition->[0]};
       print $^O eq "MSWin32" ? removemacrons($definition->[0]." ") : $definition->[0]." ";
     }
-    if($definition->[1] =~ m/{{context\|[^}]*}}/) {
-      $definition->[1] =~ m/({{context\|[^}]*}})/;
+    if($definition->[1] =~ m/\{\{context\|[^}]*\}\}/) {
+      $definition->[1] =~ m/(\{\{context\|[^}]*\}\})/;
       my $context = $1;
-      $context =~ s/{{context\||\|*}}//g;
+      $context =~ s/\{\{context\||\|*\}\}//g;
       $context =~ s/\|/, /g;
       $context = "(".$context.") ";
-      $definition->[1] =~ s/{{context\|[^}]*}}//g;
+      $definition->[1] =~ s/\{\{context\|[^}]*\}\}//g;
       $definition->[1] =~ s/^(\s*)//;
       if($1) {
         print substr $1, 0, -1;

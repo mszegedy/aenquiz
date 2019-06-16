@@ -7,3 +7,6 @@ VCS for this. I guess I didn't want to deal with that on top of
 everything else. For actual usage instructions, read the (very thorough)
 README at `aenquiz-master/README`. Seriously, it even has a version
 history.
+
+2019 UPDATE: This is definitely not my most sophisticated or most
+    well-maintained program I've written anymore.
